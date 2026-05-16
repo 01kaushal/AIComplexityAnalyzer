@@ -54,6 +54,51 @@ label {
     margin-top: 20px;
 }
 
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+    }
+
+    h1 {
+        font-size: 28px !important;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 22px !important;
+    }
+
+    h3 {
+        font-size: 18px !important;
+    }
+
+    .stButton button {
+        width: 100%;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .result-box {
+        padding: 18px !important;
+        font-size: 15px !important;
+    }
+
+    .stTextInput input,
+    .stTextArea textarea,
+    .stSelectbox div,
+    .stMultiSelect div,
+    .stNumberInput input {
+        font-size: 16px !important;
+    }
+
+}
+
 </style>
 """
 
@@ -77,7 +122,7 @@ st.divider()
 
 st.subheader("🏢 Company Information")
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([1,1], gap="large")
 
 with col1:
     company_name = st.text_input("Company Name")
@@ -95,7 +140,10 @@ with col2:
         ]
     )
 
-company_address = st.text_area("Company Address")
+company_address = st.text_area(
+    "Company Address",
+    height=100
+)
 
 st.divider()
 
@@ -105,7 +153,7 @@ st.divider()
 
 st.subheader("⚙️ Application Information")
 
-col3, col4 = st.columns(2)
+col3, col4 = st.columns([1,1], gap="large")
 
 with col3:
     application_type = st.selectbox(
@@ -151,7 +199,7 @@ ai_capabilities = st.multiselect(
     ]
 )
 
-col5, col6 = st.columns(2)
+col5, col6 = st.columns([1,1], gap="large")
 
 with col5:
     human_approval = st.selectbox(
@@ -177,7 +225,7 @@ st.divider()
 
 st.subheader("🔗 Integration & Compliance")
 
-col7, col8 = st.columns(2)
+col7, col8 = st.columns([1,1], gap="large")
 
 with col7:
     api_integrations = st.number_input(
@@ -195,7 +243,7 @@ with col8:
         value=3
     )
 
-col9, col10 = st.columns(2)
+col9, col10 = st.columns([1,1], gap="large")
 
 with col9:
     realtime_processing = st.selectbox(
